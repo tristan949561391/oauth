@@ -1,0 +1,25 @@
+{
+  "name": "oauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node --harmony bin/index.js ",
+    "build": "babel -d build src"
+  },
+  "keywords": [
+    "oauth"
+  ],
+  "author": "Tristan",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.0.0-alpha.8",
+    "koa-bodyparser": "^4.1.0",
+    "koa-compose": "^3.2.1",
+    "koa-logger": "^2.0.1",
+    "koa-router": "^7.0.1",
+    "log4js": "^1.1.1",
+    "mongoose": "^4.9.2",
+    "redis": "^2.7.1"
+  }
+}
