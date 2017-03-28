@@ -1,7 +1,7 @@
 /**
  * Created by Tristan on 17/3/19.
  */
-module.exports.port = 8080
+module.exports.port = 3000
 
 
 module.exports.log4j = {

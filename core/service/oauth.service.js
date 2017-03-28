@@ -1,16 +1,16 @@
 /**
  * Created by Tristan on 17/3/27.
  */
-
+const clientModel = require('../entity/model/client')
 let oauthService = {
-    passwordAuth: async (clientId, username, password) => {
 
-        return {clientId: clientId, username: username, password: password}
+    authenticate_code: async (clientId, redirect_uri, scope) => {
+        let client = await clientModel.findByClientId(clientId);
+        if (client.redirect_uri == redirect_uri && scope == client.scope) {
+            return client
+        }
+        throw new Error('client err')
     },
-
-    codeAuth: async () => {
-
-    }
 }
 
 module.exports = oauthService

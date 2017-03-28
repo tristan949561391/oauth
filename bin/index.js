@@ -3,7 +3,7 @@
  */
 const server = require('../core/server')
 const http = require('http');
-const port = require('../core/conf/index').port
+const port = require('../conf').port
 const log = require('log4js').getLogger()
 
 

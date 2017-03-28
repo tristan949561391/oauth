@@ -7,8 +7,12 @@ const log = require('log4js').getLogger('debug');
 router.prefix('/')
 module.exports = router
 
-router.get('/', async(ctx) => {
-    log.info('hello world')
-    ctx.body = 'asdasd'
+router.get('/', async (ctx) => {
+    await ctx.render('index')
+})
+
+router.get('/register.html', async (ctx) => {
+    await    ctx.render("register")
+
 })
 

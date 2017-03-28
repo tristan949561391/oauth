@@ -5,8 +5,8 @@ const log4j = require('log4js');
 
 let connInit = {
     init: () => {
-        require('../conn/mongoose')
-        require('../conn/redis')
+        require('./conn/mongoose')
+        require('./conn/redis')
     }
 }
 

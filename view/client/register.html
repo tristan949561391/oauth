@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/client/register" method="post">
+    <input type="text" name="client_name">client_name
+    <input type="text" name="redirect_uri">redirect_uri
+    <button type="submit">提交</button>
+</form>
+<br>
+<form action="/oauth/authration" method="get">
+    grant_type<input type="text" name="grant_type" value="authenticate_code">
+    client_id <input type="text" name="client_id" value="dcf30dd0-9b99-4f6c-af70-b0626ab53eb4">
+    redirect_uri<input type="text" name="redirect_uri" value="http://localhost:8080">
+    scope <input type="text" name="scope" value="read">
+    state<input type="text" name="state" value="1012">
+    <button type="submit">login</button>
+</form>
+</body>
+</html>

@@ -2,7 +2,7 @@
  * Created by Tristan on 17/3/27.
  */
 const mongoose = require('mongoose');
-const config = require('../conf/index');
+const config = require('../../../conf');
 mongoose.Promise = global.Promise;
 const mongo = mongoose.createConnection(config.mongoose.url, config.mongoose.options);
 mongo.once('open', function () {
