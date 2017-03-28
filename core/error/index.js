@@ -1,41 +1,40 @@
 /**
  * Created by Tristan on 2017/3/28.
  */
-var util = require('util');
+function ParamError(code, message) {
+    this.name = 'param error';
+    this.code = code || 500;
+    this.message = message || 'unknow error';
+    this.stack = (new Error()).stack;
+}
+ParamError.prototype = Object.create(Error.prototype);
+ParamError.prototype.constructor = ParamError;
 
-function ParamError(errCode, method, message) {
-    this.error_code = errCode
-    this.method = method
-    this.message = message
-    this.time = Date.now()
-    this.type = 'param'
-    Error.call(this)
+
+function BusinessError(code, message) {
+    this.name = 'business error';
+    this.code = code || 500;
+    this.message = message || 'unknow error';
+    this.stack = (new Error()).stack;
 }
 
-util.inherits(ParamError, Error)
+BusinessError.prototype = Object.create(Error.prototype);
+BusinessError.prototype.constructor = BusinessError;
 
 
-function BusinessError(errCode, method, message) {
-    this.error_code = errCode
-    this.method = method
-    this.message = message
-    this.time = Date.now()
-    this.type = 'business'
-    Error.call(this)
+function UnckeckError(code, message) {
+    this.name = 'Unckeck error';
+    this.code = code || 500;
+    this.message = message || 'unknow error';
+    this.stack = (new Error()).stack;
 }
-util.inherits(BusinessError, Error)
+
+UnckeckError.prototype = Object.create(Error.prototype);
+UnckeckError.prototype.constructor = UnckeckError;
 
 
-function unCheckError(method, message) {
-    var successModel = {
-        error_code: 0,
-        method:method,
-        message:message||'success',
-        time:Date.now(),
-        type:'OK'
-    }
-    return successModel
+module.exports = {
+    ParamError: ParamError,
+    BusinessError: BusinessError,
+    UnckeckError: UnckeckError
 }
-module.exports.BusinessError = BusinessError
-module.exports.ParamError = ParamError
-module.exports.Success=unCheckError

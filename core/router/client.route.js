@@ -3,12 +3,13 @@
  */
 const Router = require('koa-router')
 const ClientService = require('../service/client.service')
-
+const ParamError = require('../error/index').ParamError;
 const route = new Router();
 route.prefix('/client')
 module.exports = route
 
 route.get('/register.html', async (ctx) => {
+    throw new ParamError(258, 'unkow')
     await ctx.render('client/register');
 })
 

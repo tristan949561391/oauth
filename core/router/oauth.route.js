@@ -18,8 +18,8 @@ router.get('/authration', async (ctx) => {
         throw new Error('Param error')
     }
     if (grantType == "authenticate_code") {
-        let client=await oauthService.authenticate_code(clientId, redirect_uri, scope)
-        await ctx.render("oauth/oauth_login",{client_id:client.client_id,client_name:client.client_name});
+        let client = await oauthService.authenticate_code(clientId, redirect_uri, scope)
+        await ctx.render("oauth/oauth_login", {client_id: client.client_id, client_name: client.client_name});
     } else {
         throw new Error("not support")
     }
